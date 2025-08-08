@@ -1,0 +1,544 @@
+{
+	"info": {
+		"_postman_id": "2d7fc57a-a316-4e06-bce6-d9e10fd88c38",
+		"name": "Workspace-kit",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46863635"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"example@gmail.com\",\n    \"name\": \"jon Don\",\n    \"password\": \"example@1234\",\n    \"passwordConfirm\": \"example@1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"example@gmail.com\",\n    \"password\": \"example@1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forgot-password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"example@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/forgot-password",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset-password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"token\": \"53c3a1e8-5479-44b9-a064-ccebfca9608a\",\n    \"password\": \"example@12345\",\n    \"passwordConfirm\": \"example@12345\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/reset-password",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"reset-password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "me",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/user/me",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-password",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"currentPassword\": \"example@1234\",\n    \"newPassword\": \"example@1234\",\n    \"passwordConfirm\": \"example@1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user/update-password",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"update-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change-email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"example@gmail.com\"\n}               ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user/change-email",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"change-email"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verify-email-change",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/user/verify-email-change?token=f1bfb423-9fc1-40db-b5b9-94155f27dab8",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"verify-email-change"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "f1bfb423-9fc1-40db-b5b9-94155f27dab8"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "workspace",
+			"item": [
+				{
+					"name": "create-workspace",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Aarambhdevhub\"\n}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/workspace/create",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"workspace",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Aarambhdevhub-2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/workspace/update",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"workspace",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/workspace/delete",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"workspace",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/workspace",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"workspace"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_by_id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/workspace/075c36f6-dded-402c-a65b-f5c93e918945",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"workspace",
+								"075c36f6-dded-402c-a65b-f5c93e918945"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "role",
+			"item": [
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/role",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"role"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"aarambh\",\n    \"description\": \"testing\",\n    \"permissions\": [\n        \"view_roles\",\n        \"view_permissions\",\n        \"assign_roles_to_members\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/role",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"role"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/role/fba16789-321d-46ab-86b2-d93ec793339c",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"role",
+								"fba16789-321d-46ab-86b2-d93ec793339c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"aarambh-2\",\n    \"description\": \"testing\",\n    \"permissions\": [\n        \"view_roles\",\n        \"view_permissions\",\n        \"assign_roles_to_members\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/role/eda73a31-04a9-4b66-83e7-b4cb2fb52e81",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"role",
+								"eda73a31-04a9-4b66-83e7-b4cb2fb52e81"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "permission",
+			"item": [
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/permission",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"permission"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "workspace_user",
+			"item": [
+				{
+					"name": "invite",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/workspace_user/invite/{invite_code}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"workspace_user",
+								"invite",
+								"{invite_code}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/workspace_user/remove",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"workspace_user",
+								"remove"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_workspace_users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/workspace_user",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"workspace_user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"role_name\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/workspace_user/{user_id}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"workspace_user",
+								"{user_id}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8000/api",
+			"type": "string"
+		}
+	]
+}
