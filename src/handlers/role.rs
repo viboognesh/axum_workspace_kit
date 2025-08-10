@@ -7,7 +7,6 @@ use axum::{
     routing::{get, post},
 };
 use uuid::Uuid;
-use validator::Validate;
 
 use crate::{
     AppState,
@@ -15,7 +14,7 @@ use crate::{
     database::role::RoleExt,
     dtos::{
         Response,
-        role::{CreateRoleDto, RoleResponse, UpdateRoleDto},
+        role::{CreateRoleDto, RoleResponse, RoleValidation, UpdateRoleDto},
     },
     error::HttpError,
     middleware::{
@@ -68,7 +67,7 @@ pub async fn create_roles(
     Json(payload): Json<CreateRoleDto>,
 ) -> Result<impl IntoResponse, HttpError> {
     payload
-        .validate()
+        .validate_all()
         .map_err(|e| HttpError::bad_request(e.to_string()))?;
 
     app_state
@@ -98,7 +97,7 @@ pub async fn update_role(
     Json(payload): Json<UpdateRoleDto>,
 ) -> Result<impl IntoResponse, HttpError> {
     payload
-        .validate()
+        .validate_all()
         .map_err(|e| HttpError::bad_request(e.to_string()))?;
 
     app_state

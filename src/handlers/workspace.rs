@@ -16,10 +16,9 @@ use crate::{
     database::workspace::WorkspaceExt,
     dtos::{
         Response,
-        role::UpdateRoleDto,
         workspace::{
-            WorkspaceCreateDto, WorkspaceCreateResponseDto, WorkspaceList, WorkspaceListResponse,
-            WorkspaceWithRoleAndPermissions,
+            UpdateWorkspaceDto, WorkspaceCreateDto, WorkspaceCreateResponseDto, WorkspaceList,
+            WorkspaceListResponse, WorkspaceWithRoleAndPermissions,
         },
     },
     error::HttpError,
@@ -118,7 +117,7 @@ pub async fn update_workspace(
     Extension(app_state): Extension<Arc<AppState>>,
     Extension(_user): Extension<JwtAuthMiddleware>,
     Extension(workspace): Extension<WorkspaceAuthMiddleware>,
-    Json(payload): Json<UpdateRoleDto>,
+    Json(payload): Json<UpdateWorkspaceDto>,
 ) -> Result<impl IntoResponse, HttpError> {
     payload
         .validate()
